@@ -2,11 +2,11 @@ import { DataSource } from "typeorm";
 
 export const myDataSource = new DataSource({
   type: "postgres",
-  host: "dpg-cdbtr21a6gdjgo8rorj0-a",
+  host: process.env.HOSTNAME,
   port: 5432,
-  username: "datatase_user",
-  password: "BLSYhmPhLcJjS647UUtxFOtrUaIKGl2Q",
-  database: "datatase",
+  username: process.env.USERNAME,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE_NAME,
   entities: [__dirname + '/../**/*.entity.js'],
   synchronize: true,
 });
